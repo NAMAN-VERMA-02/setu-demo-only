@@ -18,6 +18,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npx next typegen  # generates PageProps / LayoutProps / RouteContext, which a clean checkout lacks
       - run: npx tsc --noEmit
       - run: npm run lint
       - run: npm test
